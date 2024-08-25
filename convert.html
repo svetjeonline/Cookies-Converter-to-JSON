@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies Converter to JSON</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: rgba(0, 0, 0, 0.2) url('https://github.com/svetjeonline/Cookies-Converter-to-JSON/blob/main/hunter.jpg?raw=true') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+            margin: auto;
+            margin-top: 50px;
+        }
+        .container h1 {
+            display: flex;
+            align-items: center;
+            font-size: 2em;
+        }
+        .container h1 img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        fieldset {
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: #fafafa;
+        }
+        legend {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 2px solid #007bff;
+            border-radius: 4px;
+            font-size: 1em;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        input[type="button"] {
+            background-color: #007bff;
+            color: #fff;
+            border: 2px solid #007bff;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        input[type="button"]:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        textarea {
+            font-family: monospace;
+            white-space: pre;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="https://ibb.co/4fmRTgk" alt="Icon">Cookies Converter to JSON</h1>
+        <form id="input-form">
+            <fieldset>
+                <legend>Input Data</legend>
+                <label for="column-delimiter">Column Delimiter</label>
+                <input id="column-delimiter" name="column-delimiter" type="text" placeholder="$" value="$" required>
+
+                <label for="source-data">Source Data</label>
+                <textarea id="source-data" name="source" rows="10" placeholder="Paste data here..."></textarea>
+
+                <input id="submit-button" type="button" value="Convert to JSON">
+
+                <label for="destination-data">Output (JSON)</label>
+                <textarea id="destination-data" name="destination" rows="10" readonly></textarea>
+            </fieldset>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#submit-button').click(function(e) {
+                e.preventDefault();
+
+                var columnDelimiter = $('#column-delimiter').val();
+                var source = $('#source-data').val();
+                if (!source) return;
+
+                var lines = source.split(/\r\n|\r|\n/);
+                var cookies = [];
+                var currentCookie = {};
+                var columnOrder = ['Host Name', 'Path', 'Name', 'Value', 'Secure', 'HTTP Only', 'Last Accessed', 'Created On', 'Expires'];
+
+                for (var i = 0; i < lines.length; i++) {
+                    var line = lines[i].trim();
+                    if (!line) continue;
+
+                    var parts = line.split(':');
+                    if (parts.length == 2) {
+                        var key = parts[0].trim();
+                        var value = parts[1].trim();
+
+                        if (key == 'Host Name' && i > 0) {
+                            cookies.push(currentCookie);
+                            currentCookie = {};
+                        }
+                        currentCookie[key] = value;
+                    }
+                }
+
+                if (Object.keys(currentCookie).length > 0) {
+                    cookies.push(currentCookie);
+                }
+
+                var jsonOutput = JSON.stringify(cookies, null, 2); // Pretty print JSON with 2 spaces indentation
+
+                $('#destination-data').text(jsonOutput);
+            });
+        });
+    </script>
+</body>
+</html>
