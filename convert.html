@@ -7,31 +7,42 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: rgba(0, 0, 0, 0.2) url('https://github.com/svetjeonline/Cookies-Converter-to-JSON/blob/main/hunter.jpg?raw=true') no-repeat center center fixed;
-            background-size: cover;
+            background: #f4f4f9;
             margin: 0;
             padding: 0;
             color: #333;
+            text-align: center;
+        }
+        .header {
+            width: 100%;
+            height: 100px; /* Adjust the height as needed */
+            background: #007bff;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+        .header img {
+            width: 50px; /* Adjust size as needed */
+            height: auto;
+            margin-right: 10px;
+        }
+        .header h1 {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            font-size: 1.5em;
         }
         .container {
-            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
             max-width: 800px;
-            width: 100%;
-            margin: auto;
-            margin-top: 50px;
-        }
-        .container h1 {
-            display: flex;
-            align-items: center;
-            font-size: 2em;
-        }
-        .container h1 img {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
+            width: 90%;
+            margin: 20px auto;
+            text-align: left;
         }
         fieldset {
             border: 2px solid #007bff;
@@ -82,8 +93,11 @@
     </style>
 </head>
 <body>
+    <div class="header">
+        <img src="https://avatars.githubusercontent.com/u/129345217?v=4" alt="Icon">
+        <h1>Cookies Converter to JSON</h1>
+    </div>
     <div class="container">
-        <h1><img src="https://ibb.co/4fmRTgk" alt="Icon">Cookies Converter to JSON</h1>
         <form id="input-form">
             <fieldset>
                 <legend>Input Data</legend>
