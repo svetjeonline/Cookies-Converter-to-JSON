@@ -39,7 +39,7 @@ To use the **Cookies Converter to JSON**, follow these steps:
 
 ## Screenshot 📸
 
-![Screenshot](https://github.com/svetjeonline/cookies-converter-to-json/raw/main/assets/screenshot.png)
+![Screenshot](https://github.com/svetjeonline/cookies-converter-to-json/raw/main/assets/screenshot.png) <!-- Replace with actual URL -->
 
 ## Usage 🚀
 
