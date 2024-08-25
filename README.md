@@ -37,9 +37,11 @@ To use the **Cookies Converter to JSON**, follow these steps:
 
 3. Open `index.html` in your web browser.
 
+
 ## Screenshot 📸
 
-![Screenshot]([https://via.placeholder.com/800x400?text=Screenshot+of+the+Application)](https://github.com/svetjeonline/Cookies-Converter-to-JSON/blob/main/view.png?raw=true)
+![Screenshot](https://github.com/yourusername/cookies-converter-to-json/blob/main/assets/screenshot.png)
+
 
 ## Usage 🚀
 
@@ -60,5 +62,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For questions or support, please reach out:
 
-- **Email**: your.email@example.com
-- **GitHub**: [yourusername](https://github.com/yourusername)
+- **Email**: svetjeonline@gmail.com
+- **GitHub**: [svetjeonline](https://github.com/svetjeonline)
