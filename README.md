@@ -26,7 +26,7 @@ To use the **Cookies Converter to JSON**, follow these steps:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/cookies-converter-to-json.git
+    git clone https://github.com/svetjeonline/cookies-converter-to-json.git
     ```
 
 2. Navigate to the project directory:
@@ -37,11 +37,9 @@ To use the **Cookies Converter to JSON**, follow these steps:
 
 3. Open `index.html` in your web browser.
 
-
 ## Screenshot 📸
 
-![Screenshot](https://github.com/yourusername/cookies-converter-to-json/blob/main/assets/screenshot.png)
-
+![Screenshot](https://github.com/svetjeonline/cookies-converter-to-json/raw/main/assets/screenshot.png)
 
 ## Usage 🚀
 
